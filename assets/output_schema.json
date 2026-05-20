@@ -1,0 +1,305 @@
+﻿{
+  "_schema_version": "1.0",
+  "_description": "Octopus Skill 脚本输出标准格式",
+  
+  "common_fields": {
+    "script": "脚本名称",
+    "action": "执行的动作",
+    "timestamp": "ISO8601格式时间戳",
+    "status": "success|error|warning",
+    "message": "人类可读的状态说明"
+  },
+  
+  "memory/user_profile": {
+    "user_id": "用户唯一标识",
+    "name": "用户名称",
+    "tech_preferences": ["技术偏好列表"],
+    "communication_style": "简洁|详细|混合",
+    "project_count": 0,
+    "created_at": "创建时间",
+    "updated_at": "更新时间"
+  },
+  
+  "memory/project_state": {
+    "project_id": "项目唯一标识",
+    "name": "项目名称",
+    "description": "项目描述",
+    "type": "游戏|小程序|APP|网站|视频|文档|其他",
+    "stage": "需求收集|调研|规划|执行|测试|交付|暂停",
+    "progress": 0,
+    "created_at": "创建时间",
+    "updated_at": "更新时间",
+    "metadata": {}
+  },
+  
+  "memory/preference": {
+    "user_id": "用户唯一标识",
+    "preference": "偏好描述",
+    "category": "沟通|代码|文档|设计|流程|其他",
+    "source": "explicit(用户明确说)|implicit(行为推断)",
+    "confidence": 0.8,
+    "recorded_at": "记录时间"
+  },
+  
+  "exploration/intent": {
+    "raw_input": "用户原始输入",
+    "project_type": "游戏|小程序|APP|网站|视频|文档|其他",
+    "platform": ["平台列表"],
+    "keywords": ["关键词列表"],
+    "complexity": "简单|中等|复杂",
+    "confidence": "high|medium|low",
+    "parsed_at": "解析时间"
+  },
+  
+  "exploration/question": {
+    "questions": [
+      {
+        "id": "Q1",
+        "question": "问题内容",
+        "purpose": "问这个问题的目的",
+        "priority": "high|medium|low",
+        "category": "用户|功能|技术|商业"
+      }
+    ],
+    "stage": "initial|deep",
+    "total": 5
+  },
+  
+  "exploration/requirement": {
+    "project_name": "项目名称",
+    "overview": "项目概述",
+    "target_users": "目标用户描述",
+    "core_features": ["核心功能列表"],
+    "non_functional": ["非功能需求"],
+    "constraints": ["约束条件"],
+    "generated_at": "生成时间"
+  },
+  
+  "research/competitor": {
+    "competitors": [
+      {
+        "name": "竞品名称",
+        "core_features": ["核心功能"],
+        "strengths": ["优势"],
+        "weaknesses": ["劣势"],
+        "user_feedback": "用户评价摘要",
+        "score": 0
+      }
+    ],
+    "market_gaps": ["市场空白点"],
+    "differentiation_opportunities": ["差异化机会"]
+  },
+  
+  "research/tech_trend": {
+    "recommendations": [
+      {
+        "name": "技术名称",
+        "category": "frontend|backend|database|deploy",
+        "maturity": "成熟|成长|新兴",
+        "popularity": "high|medium|low",
+        "reason": "推荐理由",
+        "alternatives": ["替代方案"],
+        "fit_score": 8
+      }
+    ]
+  },
+  
+  "planning/prd": {
+    "project_name": "项目名称",
+    "overview": "项目概述",
+    "target_users": "目标用户",
+    "core_features": [
+      {
+        "name": "功能名",
+        "priority": "P0|P1|P2",
+        "description": "功能描述"
+      }
+    ],
+    "non_functional": ["性能|安全|体验要求"],
+    "tech_suggestions": ["技术建议"],
+    "milestones": [
+      {
+        "phase": "阶段名",
+        "duration": "预计时长",
+        "deliverables": ["交付物"]
+      }
+    ],
+    "success_metrics": ["成功指标"]
+  },
+  
+  "planning/risk": {
+    "risks": [
+      {
+        "name": "风险名称",
+        "category": "技术|市场|资源|法律",
+        "severity": "高|中|低",
+        "probability": "高|中|低",
+        "mitigation": "应对策略"
+      }
+    ],
+    "high_priority": ["高优先级风险"],
+    "monitoring_plan": "监控计划"
+  },
+  
+  "execution/task": {
+    "tasks": [
+      {
+        "id": "T1",
+        "name": "任务名",
+        "description": "任务描述",
+        "category": "design|dev|test|deploy",
+        "depends_on": ["依赖任务ID"],
+        "priority": "P0|P1|P2",
+        "estimated_effort": "小|中|大",
+        "status": "pending|in_progress|done|blocked",
+        "assigned_skill": "调用的Skill"
+      }
+    ],
+    "total_count": 10,
+    "completed_count": 3
+  },
+  
+  "execution/schedule": {
+    "phases": [
+      {
+        "name": "阶段名",
+        "tasks": ["任务ID列表"],
+        "skills": ["需要调用的Skill"],
+        "can_parallel": true,
+        "estimated_duration": "预计时长"
+      }
+    ]
+  },
+  
+  "execution/progress": {
+    "project_name": "项目名称",
+    "overall_progress": 60,
+    "status": "正常|延期|阻塞",
+    "phases": {
+      "design": {"total": 3, "completed": 3},
+      "dev": {"total": 5, "completed": 2},
+      "test": {"total": 2, "completed": 0}
+    },
+    "blocked_tasks": ["被阻塞的任务"],
+    "recent_updates": ["最近更新"]
+  },
+  
+  "quality/checklist": {
+    "project_type": "项目类型",
+    "stage": "阶段",
+    "items": [
+      {
+        "id": "C1",
+        "name": "检查项",
+        "category": "功能|性能|安全|体验|兼容",
+        "severity": "必须|建议",
+        "checked": false
+      }
+    ],
+    "pass_rate": 0.8
+  },
+  
+  "quality/test_case": {
+    "project_name": "项目名称",
+    "test_cases": [
+      {
+        "id": "TC1",
+        "feature": "对应功能",
+        "name": "用例名",
+        "type": "正常流程|异常流程|边界条件",
+        "precondition": "前置条件",
+        "steps": ["步骤"],
+        "expected_result": "预期结果"
+      }
+    ]
+  },
+  
+  "evolution/behavior_signal": {
+    "user_id": "用户唯一标识",
+    "signal": "short_reply|long_reply|hesitation|quick_confirm|enthusiasm|abandonment|redirect|correction|praise|frustration",
+    "context": "信号出现的上下文",
+    "value": "具体表现",
+    "timestamp": "时间戳"
+  },
+  
+  "evolution/behavior_analysis": {
+    "user_id": "用户唯一标识",
+    "communication_style": "简洁|详细|混合",
+    "patience_level": "高|中|低",
+    "engagement_pattern": "主动|被动|混合",
+    "decision_speed": "快速|犹豫|混合",
+    "common_reactions": ["常见反应"],
+    "trends": ["趋势变化"]
+  },
+  
+  "evolution/adaptation": {
+    "user_id": "用户唯一标识",
+    "suggestions": [
+      {
+        "dimension": "question_count|question_depth|response_length|proactivity|delivery_style|risk_warning|inspiration",
+        "current": "当前值",
+        "suggested": "建议值",
+        "reason": "理由",
+        "confidence": 0.9
+      }
+    ],
+    "applied": false
+  },
+  
+  "evolution/feedback": {
+    "project_id": "项目唯一标识",
+    "feedbacks": [
+      {
+        "id": "F1",
+        "category": "功能|体验|性能|其他",
+        "rating": 4,
+        "comment": "反馈内容",
+        "timestamp": "时间戳"
+      }
+    ],
+    "summary": {
+      "average_rating": 4.2,
+      "strengths": ["优点"],
+      "improvements": ["改进点"]
+    }
+  },
+  
+  "evolution/iteration_plan": {
+    "project_id": "项目唯一标识",
+    "version": "v1.1",
+    "goals": ["迭代目标"],
+    "improvements": [
+      {
+        "item": "改进项",
+        "priority": "P0|P1|P2",
+        "effort": "大|中|小",
+        "from_feedback": "关联反馈ID"
+      }
+    ],
+    "estimated_workload": "预计工作量"
+  },
+  
+  "evolution/user_insight": {
+    "user_id": "用户唯一标识",
+    "profile": {
+      "basic_info": "基本信息",
+      "behavior_traits": "行为特征",
+      "capability_boundaries": "能力边界",
+      "psychological_traits": "心理特征",
+      "growth_trajectory": "成长轨迹"
+    },
+    "predictions": {
+      "potential_abandonment_stage": "可能放弃的阶段",
+      "likely_overlooked_risks": ["可能忽略的风险"],
+      "likely_needed_help": ["可能需要的帮助"]
+    },
+    "suggestions": [
+      {
+        "type": "能力提升|流程优化|风险预警|机会发现",
+        "content": "建议内容",
+        "reason": "理由",
+        "priority": "high|medium|low"
+      }
+    ]
+  }
+}

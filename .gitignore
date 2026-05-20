@@ -1,0 +1,29 @@
+﻿# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Data files (runtime generated)
+data/evolution/
+data/execution/
+data/plans/
+data/quality/
+data/requirements/
+data/research/
+data/*.json
+!data/tech_stacks.json
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Misc
+test.txt
+*.log

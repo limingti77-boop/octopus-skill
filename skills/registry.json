@@ -1,0 +1,31 @@
+﻿{
+  "version": "1.0.0",
+  "updated_at": "2026-05-18",
+  "builtin": [
+    {
+      "name": "frontend-design",
+      "description": "前端设计 - 创建美观的前端界面",
+      "triggers": ["UI", "界面", "前端", "页面", "网页", "landing page", "dashboard"],
+      "path": "skills/builtin/frontend-design"
+    },
+    {
+      "name": "brainstorming",
+      "description": "头脑风暴 - 创意探索和需求分析",
+      "triggers": ["想法", "创意", "头脑风暴", "构思", "方案", "设计"],
+      "path": "skills/builtin/brainstorming"
+    },
+    {
+      "name": "docx",
+      "description": "Word文档 - 创建和编辑专业文档",
+      "triggers": ["文档", "Word", "docx", "报告", "合同", "方案书"],
+      "path": "skills/builtin/docx"
+    },
+    {
+      "name": "webapp-testing",
+      "description": "Web测试 - Web应用功能和UI测试",
+      "triggers": ["测试", "QA", "bug", "验收", "自动化测试", "功能测试"],
+      "path": "skills/builtin/webapp-testing"
+    }
+  ],
+  "installed": []
+}
